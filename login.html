@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ingresar — Cyber 24 Horas</title>
+  <meta name="description" content="Iniciá sesión o creá tu cuenta para reservar equipos, sumar puntos y hacer pedidos en Cyber 24 Horas.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2322d3ee'/%3E%3Ctext x='32' y='44' font-size='30' text-anchor='middle' font-family='Arial' font-weight='bold' fill='%23041018'%3E24%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css?v=oficina17">
+</head>
+<body data-page="login">
+
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
+  <main class="auth-page" id="main">
+    <!-- ================= LADO VISUAL ================= -->
+    <aside class="auth-side">
+      <a class="brand" href="index.html" aria-label="Cyber 24 Horas, inicio">
+        <span class="brand-mark">24</span>
+        <span class="brand-text"><strong>CYBER</strong><span>24 HORAS</span></span>
+      </a>
+
+      <p class="auth-headline">Tu cuenta,<br><span class="text-grad">tu próximo nivel.</span></p>
+      <p>Una sola cuenta para la web y la app. Reservá equipos, sumá puntos, pedí al kiosco y controlá tu tiempo de juego.</p>
+
+      <div class="auth-features">
+        <div class="auth-feature">
+          <span class="af-icon"><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg></span>
+          <span><b>Reservas sincronizadas.</b> Elegí equipo, fecha y horario desde cualquier dispositivo.</span>
+        </div>
+        <div class="auth-feature">
+          <span class="af-icon"><svg class="icon" aria-hidden="true"><use href="#i-gift"></use></svg></span>
+          <span><b>Puntos en cada sesión.</b> Sumá 10 puntos por cada 30 minutos y canjealos por horas gratis.</span>
+        </div>
+        <div class="auth-feature">
+          <span class="af-icon"><svg class="icon" aria-hidden="true"><use href="#i-qr"></use></svg></span>
+          <span><b>Acceso con QR.</b> Escaneá el código del equipo y empezá sin tipear contraseñas.</span>
+        </div>
+        <div class="auth-feature">
+          <span class="af-icon"><svg class="icon" aria-hidden="true"><use href="#i-history"></use></svg></span>
+          <span><b>Historial completo.</b> Consultá tus visitas, consumos, reservas y calificaciones.</span>
+        </div>
+      </div>
+
+      <p class="auth-quote">«Una única fuente de verdad: lo que reservás en la web se refleja al instante en la app y en el panel del local.»</p>
+    </aside>
+
+    <!-- ================= FORMULARIO ================= -->
+    <section class="auth-main">
+      <div class="auth-card">
+        <a class="auth-back" href="index.html">
+          <svg class="icon" aria-hidden="true"><use href="#i-chevron-left"></use></svg> Volver al inicio
+        </a>
+
+        <h1 id="authTitle">Bienvenido de nuevo</h1>
+        <p>Ingresá con tu cuenta para gestionar reservas y beneficios.</p>
+
+        <div class="auth-tabs" role="tablist" aria-label="Acceso o registro">
+          <button type="button" class="auth-tab is-active" data-auth-tab="login" role="tab" aria-selected="true">Ingresar</button>
+          <button type="button" class="auth-tab" data-auth-tab="registro" role="tab" aria-selected="false">Crear cuenta</button>
+        </div>
+
+        <!-- LOGIN -->
+        <div data-auth-panel="login">
+          <form class="auth-form" id="loginForm" novalidate>
+            <div class="form-error" id="loginError">
+              <svg class="icon" aria-hidden="true"><use href="#i-info"></use></svg>
+              <span></span>
+            </div>
+            <div class="field">
+              <label for="loginEmail">Correo electrónico</label>
+              <input type="email" id="loginEmail" name="email" placeholder="tu@correo.com" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="loginPass">Contraseña</label>
+              <input type="password" id="loginPass" name="password" placeholder="Mínimo 6 caracteres" autocomplete="current-password" required>
+              <button class="password-toggle" type="button" data-toggle-pass="loginPass" aria-label="Mostrar contraseña">
+                <svg class="icon" aria-hidden="true"><use href="#i-eye"></use></svg>
+              </button>
+            </div>
+            <div class="auth-row">
+              <label class="check"><input type="checkbox" name="recordarme" checked> Recordarme</label>
+              <a href="#" data-toast="La recuperación de contraseña estará disponible en la próxima entrega." data-toast-type="info">¿Olvidaste tu contraseña?</a>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block btn-lg">Iniciar sesión
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+            </button>
+          </form>
+
+          <div class="auth-divider">o probá el prototipo</div>
+          <div class="auth-demo">
+            <strong><svg class="icon" aria-hidden="true"><use href="#i-sparkles"></use></svg> Cuenta de demostración</strong>
+            <p><b>cliente@cyber24h.com</b> · contraseña <b>demo1234</b><br>Accedé al instante con reservas y puntos de ejemplo.</p>
+            <button type="button" class="btn btn-soft btn-sm btn-block" id="demoLogin">Entrar con cuenta demo</button>
+          </div>
+
+          <p class="auth-alt">¿No tenés cuenta? <a href="login.html#registro">Creá una gratis</a></p>
+        </div>
+
+        <!-- REGISTRO -->
+        <div data-auth-panel="registro" hidden>
+          <form class="auth-form" id="registerForm" novalidate>
+            <div class="form-error" id="registerError">
+              <svg class="icon" aria-hidden="true"><use href="#i-info"></use></svg>
+              <span></span>
+            </div>
+            <div class="field">
+              <label for="regName">Nombre completo</label>
+              <input type="text" id="regName" name="nombre" placeholder="Tu nombre y apellido" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="regEmail">Correo electrónico</label>
+              <input type="email" id="regEmail" name="email" placeholder="tu@correo.com" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="regPass">Contraseña</label>
+              <input type="password" id="regPass" name="password" placeholder="Mínimo 6 caracteres" autocomplete="new-password" required>
+              <button class="password-toggle" type="button" data-toggle-pass="regPass" aria-label="Mostrar contraseña">
+                <svg class="icon" aria-hidden="true"><use href="#i-eye"></use></svg>
+              </button>
+            </div>
+            <div class="field">
+              <label for="regPass2">Repetir contraseña</label>
+              <input type="password" id="regPass2" name="password2" placeholder="Repetí tu contraseña" autocomplete="new-password" required>
+            </div>
+            <label class="check" style="font-size:.76rem;color:var(--muted)">
+              <input type="checkbox" id="regTerms"> Acepto los términos y condiciones y la política de privacidad.
+            </label>
+            <button type="submit" class="btn btn-primary btn-block btn-lg">Crear mi cuenta
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+            </button>
+            <p class="field-hint">Al registrarte te regalamos 150 puntos de bienvenida. La cuenta sirve para la web y la app móvil.</p>
+          </form>
+
+          <p class="auth-alt" style="margin-top:18px">¿Ya tenés cuenta? <a href="login.html">Iniciá sesión</a></p>
+        </div>
+
+        <div class="auth-staff">
+          <svg class="icon" aria-hidden="true"><use href="#i-lock"></use></svg>
+          <span>¿Sos empleado? <a href="empleado.html">Entrá al panel de gestión del turno</a> con tu cuenta laboral.</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/js/icons.js?v=oficina17"></script>
+  <script src="assets/js/data.js?v=oficina17"></script>
+  <script src="assets/js/app.js?v=oficina17"></script>
+</body>
+</html>

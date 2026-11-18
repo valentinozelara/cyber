@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Disponibilidad en tiempo real — Cyber 24 Horas</title>
+  <meta name="description" content="Consultá el mapa de PCs gamer, PCs de oficina y consolas disponibles y reservá tu equipo en tiempo real.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2322d3ee'/%3E%3Ctext x='32' y='44' font-size='30' text-anchor='middle' font-family='Arial' font-weight='bold' fill='%23041018'%3E24%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css?v=oficina17">
+</head>
+<body data-page="availability">
+
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Cyber 24 Horas, inicio">
+        <span class="brand-mark">24</span>
+        <span class="brand-text"><strong>CYBER</strong><span>24 HORAS</span></span>
+      </a>
+      <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
+        <a href="index.html#inicio">Inicio</a>
+        <a href="index.html#precios">Precios</a>
+        <a href="index.html#torneos">Torneos</a>
+        <a href="index.html#promos">Promociones</a>
+        <a href="index.html#kiosco">Kiosco</a>
+        <a href="index.html#contacto">Contacto</a>
+      </nav>
+      <div class="header-actions">
+        <a class="btn btn-ghost live-btn" href="disponibilidad.html"><span class="live-dot"></span> Mapa en vivo</a>
+        <a class="btn btn-primary" href="login.html" data-auth-link>
+          <span data-auth-label>Ingresar</span>
+          <svg class="icon" aria-hidden="true"><use href="#i-user"></use></svg>
+        </a>
+        <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainNav">
+          <svg class="icon" aria-hidden="true"><use href="#i-menu"></use></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="index.html">Inicio</a>
+          <svg class="icon" aria-hidden="true"><use href="#i-chevron-right"></use></svg>
+          <span>Disponibilidad</span>
+        </div>
+        <div class="page-hero-top">
+          <div>
+            <span class="eyebrow">Mapa en vivo</span>
+            <h1 style="margin-top:12px">Elegí tu equipo<br><span class="text-grad">y reservá.</span></h1>
+            <p>Estado actualizado del local. Elegí una PC gamer, una PC de oficina o una consola. Los colores reflejan la disponibilidad real: verde libre, amarillo reservado y rojo en sesión.</p>
+          </div>
+          <div class="page-hero-actions">
+            <span class="live-indicator"><span class="live-dot"></span> En vivo · <strong data-live-free>18</strong>&nbsp;libres</span>
+            <a class="btn btn-ghost btn-sm" href="cuenta.html#reservas">
+              <svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg> Mis reservas
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="avail-layout">
+          <!-- ================= MAPA ================= -->
+          <div class="map-panel">
+            <div class="map-toolbar">
+              <div class="filter-group" role="group" aria-label="Filtrar equipos">
+                <button type="button" class="filter-chip is-active" data-filter="todos">
+                  <svg class="icon" aria-hidden="true"><use href="#i-dice"></use></svg> Todos
+                </button>
+                <button type="button" class="filter-chip" data-filter="gaming">
+                  <svg class="icon" aria-hidden="true"><use href="#i-monitor"></use></svg> Gaming
+                </button>
+                <button type="button" class="filter-chip" data-filter="oficina">
+                  <svg class="icon" aria-hidden="true"><use href="#i-briefcase"></use></svg> Oficina
+                </button>
+                <button type="button" class="filter-chip" data-filter="consola">
+                  <svg class="icon" aria-hidden="true"><use href="#i-gamepad"></use></svg> Consolas
+                </button>
+              </div>
+              <div class="legend" aria-label="Referencias de estado">
+                <span class="legend-item"><i class="disponible"></i> Disponible</span>
+                <span class="legend-item"><i class="reservado"></i> Reservado</span>
+                <span class="legend-item"><i class="ocupado"></i> Ocupado</span>
+                <span class="legend-item"><i class="mantenimiento"></i> No disponible</span>
+              </div>
+            </div>
+
+            <div class="map-scroll">
+              <div class="map-note">
+                <svg class="icon" aria-hidden="true"><use href="#i-info"></use></svg>
+                <span>Seleccioná un equipo para ver horarios. Los equipos en mantenimiento no se muestran como disponibles al público.</span>
+              </div>
+              <div id="equipMap">
+                <noscript>Activá JavaScript para ver el mapa de disponibilidad.</noscript>
+              </div>
+            </div>
+
+            <div class="map-foot">
+              <span><span class="live-dot" style="width:6px;height:6px"></span> <span id="lastUpdate">Actualizado hace 3 s</span></span>
+              <button type="button" id="refreshMap">
+                <svg class="icon" aria-hidden="true"><use href="#i-history"></use></svg> Actualizar mapa
+              </button>
+            </div>
+          </div>
+
+          <!-- ================= RESERVA ================= -->
+          <aside class="booking-panel" id="bookingPanel" aria-label="Panel de reserva">
+            <div class="booking-head">
+              <h2><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg> Tu reserva</h2>
+              <span class="chip chip--green"><span class="live-dot" style="width:6px;height:6px"></span> Tiempo real</span>
+            </div>
+            <div class="booking-body" id="bookingBody">
+              <div class="booking-empty">
+                <div class="be-icon"><svg class="icon" aria-hidden="true"><use href="#i-monitor"></use></svg></div>
+                <h3>Elegí un equipo</h3>
+                <p>Seleccioná una computadora o consola del mapa para ver horarios y reservar.</p>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="info-strip" style="padding-bottom:80px">
+          <div class="info-item">
+            <svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg>
+            <div><strong>Reservá en 3 pasos</strong><span>Elegí equipo, fecha y horario. Confirmá con tu cuenta.</span></div>
+          </div>
+          <div class="info-item">
+            <svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg>
+            <div><strong>Tolerancia de llegada</strong><span>Si no te presentás, el equipo se libera pasados 15 minutos.</span></div>
+          </div>
+          <div class="info-item">
+            <svg class="icon" aria-hidden="true"><use href="#i-qr"></use></svg>
+            <div><strong>Ingreso con QR</strong><span>Al llegar, escaneá el código del equipo desde la app.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html">
+            <span class="brand-mark">24</span>
+            <span class="brand-text"><strong>CYBER</strong><span>24 HORAS</span></span>
+          </a>
+          <p>PCs gamer y de oficina, consolas, kiosco y torneos en un mismo lugar. Abierto las 24 horas, todos los días.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explorar</h4>
+          <ul>
+            <li><a href="index.html#precios">Precios</a></li>
+            <li><a href="index.html#promos">Promociones</a></li>
+            <li><a href="index.html#torneos">Torneos</a></li>
+            <li><a href="index.html#kiosco">Kiosco</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Cuenta</h4>
+          <ul>
+            <li><a href="login.html">Iniciar sesión</a></li>
+            <li><a href="login.html#registro">Crear cuenta</a></li>
+            <li><a href="cuenta.html">Mis reservas</a></li>
+            <li><a href="disponibilidad.html">Mapa en vivo</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul class="footer-contact">
+            <li><svg class="icon"><use href="#i-map-pin"></use></svg><span>Av. Gamer 1024, Buenos Aires</span></li>
+            <li><svg class="icon"><use href="#i-phone"></use></svg><span>+54 11 5555-2424</span></li>
+            <li><svg class="icon"><use href="#i-mail"></use></svg><span>hola@cyber24h.com</span></li>
+            <li><svg class="icon"><use href="#i-clock"></use></svg><span>Abierto 24/7</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Cyber 24 Horas. Todos los derechos reservados.</span>
+        <div class="footer-links">
+          <span class="demo-note">Prototipo UI · datos de ejemplo</span>
+          <a href="empleado.html">Acceso personal</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/icons.js?v=oficina17"></script>
+  <script src="assets/js/data.js?v=oficina17"></script>
+  <script src="assets/js/app.js?v=oficina17"></script>
+</body>
+</html>

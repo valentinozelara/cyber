@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Panel de empleados — Cyber 24 Horas</title>
+  <meta name="description" content="Panel de gestión operativa para empleados de Cyber 24 Horas: equipos, reservas, caja, kiosco, impresiones, clientes y reportes.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2322d3ee'/%3E%3Ctext x='32' y='44' font-size='30' text-anchor='middle' font-family='Arial' font-weight='bold' fill='%23041018'%3E24%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css?v=empleado15">
+  <link rel="stylesheet" href="assets/css/panel.css?v=empleado15">
+</head>
+<body data-page="panel">
+
+  <h1 class="sr-only">Panel de empleados</h1>
+
+  <!-- ============================ LOGIN DEL PERSONAL ============================ -->
+  <section class="panel-login" id="panelLogin">
+    <div class="panel-login-glow panel-login-glow--a"></div>
+    <div class="panel-login-glow panel-login-glow--b"></div>
+    <div class="panel-login-shell">
+      <div class="panel-login-copy">
+        <a class="brand" href="index.html" aria-label="Cyber 24 Horas, volver al sitio">
+          <span class="brand-mark">24</span>
+          <span class="brand-text"><strong>CYBER</strong><span>24 HORAS</span></span>
+        </a>
+        <span class="eyebrow panel-login-eyebrow">Panel de gestión</span>
+        <p class="panel-login-headline">El local,<br><span class="text-grad">en tiempo real.</span></p>
+        <p class="panel-login-lead">Herramientas para el turno: mapa operativo, caja, kiosco, impresiones, clientes y reportes. Todo lo que pasa en el piso, desde una sola pantalla.</p>
+        <div class="panel-login-features">
+          <div class="panel-login-feature">
+            <span class="plf-icon"><svg class="icon" aria-hidden="true"><use href="#i-monitor"></use></svg></span>
+            <div><strong>Mapa operativo</strong><span>Estado, cliente y tiempo restante de cada equipo.</span></div>
+          </div>
+          <div class="panel-login-feature">
+            <span class="plf-icon"><svg class="icon" aria-hidden="true"><use href="#i-wallet"></use></svg></span>
+            <div><strong>Caja y extensiones</strong><span>Registrá pagos en efectivo y sumá tiempo al instante.</span></div>
+          </div>
+          <div class="panel-login-feature">
+            <span class="plf-icon"><svg class="icon" aria-hidden="true"><use href="#i-package"></use></svg></span>
+            <div><strong>Kiosco y stock</strong><span>Pedidos, ventas, reposición y alertas de stock bajo.</span></div>
+          </div>
+        </div>
+        <div class="panel-login-live">
+          <span class="live-indicator"><span class="live-dot"></span> Sistema sincronizado</span>
+          <span class="panel-login-live-divider"></span>
+          <span><strong>19</strong> equipos libres</span>
+          <span><strong>6</strong> sesiones activas</span>
+          <span><strong>2</strong> alertas de stock</span>
+        </div>
+      </div>
+
+      <div class="panel-login-card card">
+        <div class="panel-login-card-head">
+          <span class="chip chip--cyan"><svg class="icon" aria-hidden="true"><use href="#i-shield-check"></use></svg> Acceso del personal</span>
+          <span class="panel-login-role">Rol: Empleado</span>
+        </div>
+        <h2>Iniciar turno</h2>
+        <p class="panel-login-sub">Ingresá con tu cuenta de empleado. El panel muestra únicamente las funciones de tu rol.</p>
+
+        <form id="panelLoginForm" class="panel-login-form" novalidate>
+          <div class="field">
+            <label for="panelEmail">Correo laboral</label>
+            <input type="email" id="panelEmail" name="email" placeholder="empleado@cyber24h.com" autocomplete="username" required>
+          </div>
+          <div class="field">
+            <label for="panelPassword">Contraseña</label>
+            <div class="panel-pass-wrap">
+              <input type="password" id="panelPassword" name="password" placeholder="Tu contraseña" autocomplete="current-password" required>
+              <button type="button" class="panel-pass-toggle" id="panelPassToggle" aria-label="Mostrar contraseña">
+                <svg class="icon" aria-hidden="true"><use href="#i-eye"></use></svg>
+              </button>
+            </div>
+          </div>
+          <div class="panel-login-error" id="panelLoginError" role="alert"></div>
+          <button type="submit" class="btn btn-primary btn-block btn-lg">
+            Ingresar al panel
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+          </button>
+        </form>
+
+        <button type="button" class="btn btn-ghost btn-block panel-demo-btn" id="panelDemoBtn">
+          <svg class="icon" aria-hidden="true"><use href="#i-zap"></use></svg> Probar turno demo
+        </button>
+
+        <div class="panel-demo-creds">
+          <div><span>Usuario demo</span><strong>empleado@cyber24h.com</strong></div>
+          <div><span>Contraseña</span><strong>turno1234</strong></div>
+        </div>
+
+        <div class="panel-login-foot">
+          <span><svg class="icon" aria-hidden="true"><use href="#i-shield"></use></svg> Acceso exclusivo para personal autorizado</span>
+          <a href="index.html" class="link-arrow">Volver al sitio <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ APLICACIÓN ============================ -->
+  <div class="panel-app" id="panelApp" hidden>
+
+  <a class="skip-link" href="#panelContent">Saltar al contenido</a>
+    <aside class="panel-sidebar" id="panelSidebar" aria-label="Navegación del panel">
+      <div class="panel-sidebar-head">
+        <a class="brand" href="index.html" aria-label="Cyber 24 Horas">
+          <span class="brand-mark">24</span>
+          <span class="brand-text"><strong>CYBER</strong><span>24 HORAS</span></span>
+        </a>
+        <span class="panel-version">PANEL · v0.9</span>
+      </div>
+
+      <div class="panel-operator-card">
+        <span class="panel-avatar" data-user-initials>VR</span>
+        <div>
+          <strong data-user-name>Valentina Ríos</strong>
+          <span data-user-role>Empleado · Turno noche</span>
+        </div>
+        <span class="panel-online" title="En línea"></span>
+      </div>
+
+      <nav class="panel-nav" aria-label="Secciones del panel">
+        <span class="panel-nav-label">Operación</span>
+        <button type="button" class="panel-nav-item" data-section="resumen">
+          <svg class="icon" aria-hidden="true"><use href="#i-layout-dashboard"></use></svg><span>Resumen</span>
+        </button>
+        <button type="button" class="panel-nav-item" data-section="mapa">
+          <svg class="icon" aria-hidden="true"><use href="#i-monitor"></use></svg><span>Mapa y equipos</span><span class="panel-nav-badge" data-nav-count="mapa">32</span>
+        </button>
+        <button type="button" class="panel-nav-item" data-section="reservas">
+          <svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg><span>Reservas del día</span><span class="panel-nav-badge" data-nav-count="reservas">7</span>
+        </button>
+        <button type="button" class="panel-nav-item" data-section="caja">
+          <svg class="icon" aria-hidden="true"><use href="#i-wallet"></use></svg><span>Caja y tiempo</span>
+        </button>
+        <button type="button" class="panel-nav-item" data-section="kiosco">
+          <svg class="icon" aria-hidden="true"><use href="#i-package"></use></svg><span>Kiosco</span><span class="panel-nav-alert" data-nav-count="kiosco">3</span>
+        </button>
+        <button type="button" class="panel-nav-item" data-section="impresiones">
+          <svg class="icon" aria-hidden="true"><use href="#i-printer"></use></svg><span>Impresiones</span><span class="panel-nav-badge" data-nav-count="impresiones">4</span>
+        </button>
+        <span class="panel-nav-label">Atención</span>
+        <button type="button" class="panel-nav-item" data-section="clientes">
+          <svg class="icon" aria-hidden="true"><use href="#i-users"></use></svg><span>Clientes</span>
+        </button>
+        <button type="button" class="panel-nav-item" data-section="mensajes">
+          <svg class="icon" aria-hidden="true"><use href="#i-message-square"></use></svg><span>Mensajes</span>
+        </button>
+        <button type="button" class="panel-nav-item" data-section="reportes">
+          <svg class="icon" aria-hidden="true"><use href="#i-bar-chart"></use></svg><span>Reportes</span>
+        </button>
+      </nav>
+
+      <div class="panel-sidebar-foot">
+        <div class="panel-system">
+          <span class="live-dot"></span>
+          <div><strong>Sistema operativo</strong><span>Última sincronización: ahora</span></div>
+        </div>
+        <button type="button" class="panel-logout" id="panelLogout">
+          <svg class="icon" aria-hidden="true"><use href="#i-log-out"></use></svg> Cerrar sesión
+        </button>
+      </div>
+    </aside>
+    <div class="panel-scrim" id="panelScrim"></div>
+
+    <div class="panel-main">
+      <header class="panel-topbar">
+        <button type="button" class="panel-menu-btn" id="panelMenuBtn" aria-label="Abrir menú" aria-expanded="false">
+          <svg class="icon" aria-hidden="true"><use href="#i-menu"></use></svg>
+        </button>
+        <div class="panel-topbar-title">
+          <span class="panel-topbar-eyebrow">Panel de gestión · <span data-user-role>Empleado</span></span>
+          <h2 id="panelTitle">Resumen</h2>
+          <p id="panelSubtitle">Estado general del local y del turno.</p>
+        </div>
+        <div class="panel-topbar-actions">
+          <span class="panel-sync"><span class="live-dot"></span> En vivo</span>
+          <div class="panel-clock">
+            <span id="panelDate">17 NOV 2026</span>
+            <strong id="panelTime">00:00</strong>
+          </div>
+          <button type="button" class="panel-icon-btn" id="panelAlertsBtn" aria-label="Ver alertas">
+            <svg class="icon" aria-hidden="true"><use href="#i-bell"></use></svg>
+            <span class="panel-alert-dot"></span>
+          </button>
+          <div class="panel-top-operator">
+            <span class="panel-avatar panel-avatar--sm" data-user-initials>VR</span>
+            <div><strong data-user-name>Valentina Ríos</strong><span data-shift>Turno noche</span></div>
+          </div>
+        </div>
+      </header>
+
+      <main class="panel-content" id="panelContent" tabindex="-1"></main>
+    </div>
+  </div>
+
+  <div id="panelModalRoot"></div>
+  <div class="toast-container" id="panelToasts"></div>
+
+  <script src="assets/js/icons.js?v=empleado13"></script>
+  <script src="assets/js/data.js?v=empleado13"></script>
+  <script src="assets/js/panel-data.js?v=empleado13"></script>
+  <script src="assets/js/empleado.js?v=empleado13"></script>
+</body>
+</html>

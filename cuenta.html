@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mi cuenta — Cyber 24 Horas</title>
+  <meta name="description" content="Gestioná tus reservas, puntos de fidelidad, historial de consumos y perfil en Cyber 24 Horas.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2322d3ee'/%3E%3Ctext x='32' y='44' font-size='30' text-anchor='middle' font-family='Arial' font-weight='bold' fill='%23041018'%3E24%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css?v=oficina17">
+</head>
+<body data-page="account">
+
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Cyber 24 Horas, inicio">
+        <span class="brand-mark">24</span>
+        <span class="brand-text"><strong>CYBER</strong><span>24 HORAS</span></span>
+      </a>
+      <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
+        <a href="index.html#inicio">Inicio</a>
+        <a href="index.html#precios">Precios</a>
+        <a href="index.html#torneos">Torneos</a>
+        <a href="index.html#promos">Promociones</a>
+        <a href="index.html#kiosco">Kiosco</a>
+        <a href="index.html#contacto">Contacto</a>
+      </nav>
+      <div class="header-actions">
+        <a class="btn btn-ghost live-btn" href="disponibilidad.html"><span class="live-dot"></span> Mapa en vivo</a>
+        <a class="btn btn-primary" href="cuenta.html" data-auth-link>
+          <span data-auth-label>Mi cuenta</span>
+          <svg class="icon" aria-hidden="true"><use href="#i-user"></use></svg>
+        </a>
+        <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainNav">
+          <svg class="icon" aria-hidden="true"><use href="#i-menu"></use></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="account-page" id="main">
+    <h1 class="sr-only">Mi cuenta</h1>
+    <div class="container">
+
+      <!-- ================= GATE SIN SESIÓN ================= -->
+      <div class="account-gate card" id="cuentaGate" hidden>
+        <div class="gate-icon"><svg class="icon" aria-hidden="true"><use href="#i-user"></use></svg></div>
+        <h2>Ingresá para ver tu cuenta</h2>
+        <p>Necesitás iniciar sesión para consultar tus reservas, puntos e historial. La misma cuenta funciona en la web y en la app.</p>
+        <div class="gate-actions">
+          <a class="btn btn-primary" href="login.html?next=cuenta.html">Iniciar sesión
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+          </a>
+          <button class="btn btn-ghost" type="button" id="gateDemoLogin">
+            <svg class="icon" aria-hidden="true"><use href="#i-sparkles"></use></svg> Ver cuenta demo
+          </button>
+        </div>
+        <p class="gate-note">Demo: <code>cliente@cyber24h.com</code> · <code>demo1234</code></p>
+      </div>
+
+      <!-- ================= CUENTA ================= -->
+      <div id="cuentaShell" hidden>
+        <div class="account-head">
+          <div>
+            <span class="eyebrow">Mi cuenta</span>
+            <h2 style="margin-top:10px">Hola, <span class="text-grad" data-user-name>Alex</span>.</h2>
+            <p>Gestioná tus reservas, puntos y actividad desde un solo lugar.</p>
+          </div>
+          <div class="account-actions">
+            <span class="chip chip--cyan"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-star"></use></svg> Miembro desde <span data-user-since>marzo 2024</span></span>
+            <button class="btn btn-ghost btn-sm" type="button" data-logout>
+              <svg class="icon" aria-hidden="true"><use href="#i-log-out"></use></svg> Salir
+            </button>
+          </div>
+        </div>
+
+        <div class="account-layout">
+          <!-- NAV -->
+          <aside class="account-nav" aria-label="Secciones de la cuenta">
+            <button type="button" class="is-active" data-account-tab="resumen">
+              <svg class="icon" aria-hidden="true"><use href="#i-monitor"></use></svg> Resumen
+            </button>
+            <button type="button" data-account-tab="reservas">
+              <svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg> Mis reservas
+            </button>
+            <button type="button" data-account-tab="puntos">
+              <svg class="icon" aria-hidden="true"><use href="#i-gift"></use></svg> Puntos
+            </button>
+            <button type="button" data-account-tab="historial">
+              <svg class="icon" aria-hidden="true"><use href="#i-history"></use></svg> Historial
+            </button>
+            <button type="button" data-account-tab="perfil">
+              <svg class="icon" aria-hidden="true"><use href="#i-user"></use></svg> Perfil
+            </button>
+            <div class="nav-sep"></div>
+            <button type="button" data-logout>
+              <svg class="icon" aria-hidden="true"><use href="#i-log-out"></use></svg> Cerrar sesión
+            </button>
+          </aside>
+
+          <!-- CONTENIDO -->
+          <div class="account-content">
+
+            <!-- RESUMEN -->
+            <section class="account-panel is-active" data-panel="resumen">
+              <div class="summary-grid">
+                <article class="summary-card">
+                  <div class="sc-top"><span class="sc-label" style="margin-top:0">Sesión activa</span><span class="sc-icon"><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg></span></div>
+                  <div class="sc-value"><span data-session-time>47:00</span></div>
+                  <div class="sc-sub">Equipo P03 · Zona Pro</div>
+                </article>
+                <article class="summary-card">
+                  <div class="sc-top"><span class="sc-label" style="margin-top:0">Puntos</span><span class="sc-icon"><svg class="icon" aria-hidden="true"><use href="#i-gift"></use></svg></span></div>
+                  <div class="sc-value" data-user-points>1.240</div>
+                  <div class="sc-sub">260 pts para el próximo premio</div>
+                </article>
+                <article class="summary-card">
+                  <div class="sc-top"><span class="sc-label" style="margin-top:0">Reservas activas</span><span class="sc-icon"><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg></span></div>
+                  <div class="sc-value" id="summaryReservas">2</div>
+                  <div class="sc-sub" id="summaryProxima">Próxima: mañana 18:00</div>
+                </article>
+                <article class="summary-card">
+                  <div class="sc-top"><span class="sc-label" style="margin-top:0">Gasto del mes</span><span class="sc-icon"><svg class="icon" aria-hidden="true"><use href="#i-credit-card"></use></svg></span></div>
+                  <div class="sc-value">$ 32.450</div>
+                  <div class="sc-sub">Noviembre 2026</div>
+                </article>
+              </div>
+
+              <div class="account-grid">
+                <!-- Sesión -->
+                <article class="panel-card">
+                  <div class="panel-card-head">
+                    <h3>Sesión activa</h3>
+                    <span class="session-live"><i></i> En curso</span>
+                  </div>
+                  <div class="session-main">
+                    <div class="session-timer">
+                      <svg viewBox="0 0 82 82" aria-hidden="true">
+                        <defs>
+                          <linearGradient id="timerGrad" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0" stop-color="#22d3ee"></stop>
+                            <stop offset="1" stop-color="#f472b6"></stop>
+                          </linearGradient>
+                        </defs>
+                        <circle class="track" cx="41" cy="41" r="34"></circle>
+                        <circle class="bar" cx="41" cy="41" r="34" id="sessionBar"></circle>
+                      </svg>
+                      <div class="time" data-session-time>47:00</div>
+                    </div>
+                    <div class="session-info">
+                      <strong>PC P03</strong>
+                      <span>RTX 4070 · Zona Pro</span>
+                      <div class="session-tags">
+                        <span class="chip chip--green">Activa</span>
+                        <span class="chip">Inició 19:12</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="session-actions">
+                    <button class="btn btn-primary btn-sm" type="button" data-accion-demo="La extensión de tiempo con pago digital se gestiona desde la app móvil (próxima entrega).">
+                      <svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg> Extender tiempo
+                    </button>
+                    <button class="btn btn-ghost btn-sm" type="button" data-accion-demo="El pedido al kiosco se realiza desde la app móvil. En el prototipo mostramos la pantalla de la web.">
+                      <svg class="icon" aria-hidden="true"><use href="#i-cup"></use></svg> Pedir al kiosco
+                    </button>
+                  </div>
+                  <div class="session-note">
+                    <svg class="icon" aria-hidden="true"><use href="#i-info"></use></svg>
+                    <span>El tiempo se descuenta en tiempo real. Cuando falten pocos minutos vas a recibir una notificación en la app para extender la sesión.</span>
+                  </div>
+                </article>
+
+                <!-- Puntos -->
+                <article class="panel-card">
+                  <div class="panel-card-head">
+                    <h3>Puntos de fidelidad</h3>
+                    <a class="link-arrow" href="#puntos" data-account-tab="puntos" style="font-size:.74rem">Ver detalle
+                      <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+                    </a>
+                  </div>
+                  <div class="points-big" data-user-points>1.240 <span>puntos</span></div>
+                  <div class="progress-block">
+                    <div class="pb-head"><span>Progreso al próximo premio</span><span>1.240 / 1.500</span></div>
+                    <div class="progress"><span id="pointsBar" style="width:82%"></span></div>
+                  </div>
+                  <div class="reward-list">
+                    <div class="reward-item"><span>1 hora libre</span><strong>100 pts</strong></div>
+                    <div class="reward-item"><span>Descuento en kiosco</span><strong>50 pts</strong></div>
+                    <div class="reward-item"><span>Impresión B/N</span><strong>10 pts</strong></div>
+                  </div>
+                </article>
+              </div>
+
+              <article class="panel-card" style="margin-top:16px">
+                <div class="panel-card-head">
+                  <h3>Próxima reserva</h3>
+                  <a class="link-arrow" href="#reservas" data-account-tab="reservas" style="font-size:.74rem">Ver todas
+                    <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+                  </a>
+                </div>
+                <div class="reserva-card" style="margin-top:0">
+                  <div class="reserva-date"><strong>17</strong><span>nov</span></div>
+                  <div class="reserva-info">
+                    <strong>P05 · Computadora</strong>
+                    <span>Martes 17 de noviembre · 18:00 a 20:00 · 2 h</span>
+                    <span>CYB-2841 · Reserva web · $ 5.000</span>
+                  </div>
+                  <a class="btn btn-ghost btn-sm" href="disponibilidad.html">Ver mapa</a>
+                </div>
+              </article>
+            </section>
+
+            <!-- RESERVAS -->
+            <section class="account-panel" data-panel="reservas">
+              <div class="panel-title">
+                <div>
+                  <h2>Mis reservas</h2>
+                  <p><span id="reservasCount">2</span> reservas activas · las cancelaciones no tienen costo hasta el inicio.</p>
+                </div>
+                <a class="btn btn-primary btn-sm" href="disponibilidad.html">
+                  <svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg> Nueva reserva
+                </a>
+              </div>
+              <div class="panel-card">
+                <div id="reservasList"></div>
+              </div>
+            </section>
+
+            <!-- PUNTOS -->
+            <section class="account-panel" data-panel="puntos">
+              <div class="panel-title">
+                <div>
+                  <h2>Puntos de fidelidad</h2>
+                  <p>Sumás 10 puntos por cada 30 minutos efectivos de uso. Los puntos vencen tras 12 meses sin actividad.</p>
+                </div>
+                <span class="chip chip--violet"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-sparkles"></use></svg> Nivel Gamer</span>
+              </div>
+              <div class="account-grid">
+                <article class="panel-card">
+                  <div class="panel-card-head"><h3>Saldo disponible</h3><svg class="icon" aria-hidden="true"><use href="#i-gift"></use></svg></div>
+                  <div class="points-big" data-user-points>1.240 <span>puntos</span></div>
+                  <div class="progress-block">
+                    <div class="pb-head"><span>Para el próximo premio</span><span>260 pts</span></div>
+                    <div class="progress"><span style="width:82%"></span></div>
+                  </div>
+                  <div class="reward-list">
+                    <div class="reward-item"><span>5 horas gratis (100 pts = 1 h)</span><strong>500 pts</strong></div>
+                    <div class="reward-item"><span>Descuento 15% en kiosco</span><strong>50 pts</strong></div>
+                    <div class="reward-item"><span>Impresión color</span><strong>25 pts</strong></div>
+                  </div>
+                  <button class="btn btn-primary btn-block" type="button" style="margin-top:16px" data-toast="El canje de puntos se realiza desde la app móvil. En la próxima entrega sumamos esa pantalla." data-toast-type="info">Canjear puntos</button>
+                </article>
+                <article class="panel-card">
+                  <div class="panel-card-head"><h3>Últimos movimientos</h3><svg class="icon" aria-hidden="true"><use href="#i-history"></use></svg></div>
+                  <div class="summary-list" id="puntosMovimientos"></div>
+                </article>
+              </div>
+            </section>
+
+            <!-- HISTORIAL -->
+            <section class="account-panel" data-panel="historial">
+              <div class="panel-title">
+                <div>
+                  <h2>Historial de visitas</h2>
+                  <p>Fecha, equipo, horas consumidas, kiosco, impresiones y monto abonado.</p>
+                </div>
+                <button class="btn btn-ghost btn-sm" type="button" data-toast="La exportación del historial a PDF estará disponible en la próxima entrega." data-toast-type="info">
+                  <svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg> Exportar
+                </button>
+              </div>
+              <div class="panel-card">
+                <div class="table-wrap">
+                  <table class="data-table">
+                    <thead>
+                      <tr>
+                        <th>Fecha</th>
+                        <th>Equipo</th>
+                        <th>Horas</th>
+                        <th>Kiosco</th>
+                        <th>Impresiones</th>
+                        <th>Total</th>
+                        <th>Estado</th>
+                      </tr>
+                    </thead>
+                    <tbody id="historialBody"></tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+
+            <!-- PERFIL -->
+            <section class="account-panel" data-panel="perfil">
+              <div class="panel-title">
+                <div>
+                  <h2>Mi perfil</h2>
+                  <p>Estos datos se comparten con la app móvil y el panel de gestión.</p>
+                </div>
+                <span class="chip chip--cyan"><span class="user-avatar" data-user-initials>AG</span> <span data-user-fullname>Alex Gamer</span></span>
+              </div>
+              <div class="account-grid">
+                <article class="panel-card profile-card">
+                  <h2>Datos personales</h2>
+                  <p>Actualizá tu nombre y correo electrónico.</p>
+                  <form class="profile-form" id="profileForm">
+                    <div class="profile-grid">
+                      <div class="field">
+                        <label for="profileName">Nombre completo</label>
+                        <input type="text" id="profileName" autocomplete="name">
+                      </div>
+                      <div class="field">
+                        <label for="profileEmail">Correo electrónico</label>
+                        <input type="email" id="profileEmail" autocomplete="email">
+                      </div>
+                    </div>
+                    <div class="actions">
+                      <button class="btn btn-primary" type="submit">Guardar cambios
+                        <svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>
+                      </button>
+                      <button class="btn btn-ghost" type="button" data-toast="El cambio de contraseña se gestionará desde la configuración de seguridad." data-toast-type="info">Cambiar contraseña</button>
+                    </div>
+                  </form>
+                </article>
+                <article class="panel-card">
+                  <div class="panel-card-head"><h3>Cuenta</h3><svg class="icon" aria-hidden="true"><use href="#i-shield-check"></use></svg></div>
+                  <div class="summary-list">
+                    <div class="summary-row"><span>Correo</span><strong data-user-email>cliente@cyber24h.com</strong></div>
+                    <div class="summary-row"><span>Miembro desde</span><strong data-user-since>marzo 2024</strong></div>
+                    <div class="summary-row"><span>Plataforma</span><strong>Web + App móvil</strong></div>
+                    <div class="summary-row"><span>Puntos</span><strong><span data-user-points>1.240</span> pts</strong></div>
+                  </div>
+                  <div class="form-note" style="margin-top:16px">La cuenta es única para todo el sistema. Las credenciales de la web sirven también para la app.</div>
+                </article>
+              </div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="margin-top:0;border-top:0;padding-top:0">
+        <span>© 2026 Cyber 24 Horas. Todos los derechos reservados.</span>
+        <div class="footer-links">
+          <span class="demo-note">Prototipo UI · datos de ejemplo</span>
+          <a href="index.html#contacto">Contacto</a>
+          <a href="disponibilidad.html">Mapa en vivo</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/icons.js?v=oficina17"></script>
+  <script src="assets/js/data.js?v=oficina17"></script>
+  <script src="assets/js/app.js?v=oficina17"></script>
+</body>
+</html>

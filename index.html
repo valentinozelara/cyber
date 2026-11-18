@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cyber 24 Horas — Computadoras, consolas y torneos</title>
+  <meta name="description" content="Cyber abierto 24 horas. Reservá PCs gamer, PCs de oficina y consolas desde la web, consultá precios, promociones y torneos.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2322d3ee'/%3E%3Ctext x='32' y='44' font-size='30' text-anchor='middle' font-family='Arial' font-weight='bold' fill='%23041018'%3E24%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css?v=oficina17">
+</head>
+<body data-page="home">
+
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
+  <!-- ============================ HEADER ============================ -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Cyber 24 Horas, inicio">
+        <span class="brand-mark">24</span>
+        <span class="brand-text"><strong>CYBER</strong><span>24 HORAS</span></span>
+      </a>
+      <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
+        <a href="index.html#inicio" class="is-active">Inicio</a>
+        <a href="index.html#precios">Precios</a>
+        <a href="index.html#torneos">Torneos</a>
+        <a href="index.html#promos">Promociones</a>
+        <a href="index.html#kiosco">Kiosco</a>
+        <a href="index.html#contacto">Contacto</a>
+      </nav>
+      <div class="header-actions">
+        <a class="btn btn-ghost live-btn" href="disponibilidad.html"><span class="live-dot"></span> Mapa en vivo</a>
+        <a class="btn btn-primary" href="login.html" data-auth-link>
+          <span data-auth-label>Ingresar</span>
+          <svg class="icon" aria-hidden="true"><use href="#i-user"></use></svg>
+        </a>
+        <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainNav">
+          <svg class="icon" aria-hidden="true"><use href="#i-menu"></use></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============================ HERO ============================ -->
+    <section class="hero" id="inicio">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div class="hero-badge"><span class="badge-pulse"></span> Abierto 24/7 · <strong data-count="disponible">18</strong>&nbsp;equipos libres ahora</div>
+            <h1>Tu próximo <span class="text-grad">nivel</span> empieza acá.</h1>
+            <p class="hero-sub">PCs gamer y de oficina, consolas de última generación, reservas desde la web, kiosco, impresiones y torneos. Todo en un mismo lugar, abierto las 24 horas.</p>
+            <div class="hero-actions">
+              <a href="disponibilidad.html" class="btn btn-primary btn-lg">Reservar mi equipo
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+              </a>
+              <a href="#precios" class="btn btn-ghost btn-lg">
+                <svg class="icon" aria-hidden="true"><use href="#i-play"></use></svg> Ver precios
+              </a>
+            </div>
+            <div class="hero-trust">
+              <span><svg class="icon" aria-hidden="true"><use href="#i-shield-check"></use></svg> Sin pago online</span>
+              <span><svg class="icon" aria-hidden="true"><use href="#i-wifi"></use></svg> Internet 1 Gbps</span>
+              <span><svg class="icon" aria-hidden="true"><use href="#i-qr"></use></svg> Acceso con QR</span>
+            </div>
+            <div class="hero-stats">
+              <div><strong>32</strong><span>Equipos</span></div>
+              <div><strong>24/7</strong><span>Abierto</span></div>
+              <div><strong>1 Gbps</strong><span>Fibra óptica</span></div>
+              <div><strong>4.9</strong><span>Valoración</span></div>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="carousel" id="heroCarousel" aria-roledescription="carrusel" aria-label="Destacados del cyber">
+              <article class="carousel-slide is-active" data-theme="cyan">
+                <div class="slide-art">
+                  <div class="art-orb"></div>
+                  <div class="art-chip art-chip--a"><svg class="icon" aria-hidden="true"><use href="#i-zap"></use></svg> 240 Hz</div>
+                  <div class="art-chip art-chip--b"><svg class="icon" aria-hidden="true"><use href="#i-cpu"></use></svg> RTX 4070</div>
+                  <div class="art-chip art-chip--c"><svg class="icon" aria-hidden="true"><use href="#i-wifi"></use></svg> 1 Gbps</div>
+                  <div class="slide-grid-overlay"></div>
+                </div>
+                <div class="slide-content">
+                  <span class="slide-badge">Zona Pro</span>
+                  <p class="slide-title">Setup listo para jugar</p>
+                  <p>RTX 4070, monitores de 240 Hz y periféricos gamer. Elegí tu PC y empezá en minutos.</p>
+                  <div class="slide-foot">
+                    <div class="slide-price">$ 3.000 <span>/ hora</span></div>
+                    <a class="btn btn-soft btn-sm" href="disponibilidad.html">Ver mapa
+                      <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="carousel-slide" data-theme="cyan">
+                <div class="slide-art">
+                  <div class="art-orb"></div>
+                  <div class="art-chip art-chip--a"><svg class="icon" aria-hidden="true"><use href="#i-briefcase"></use></svg> Office 365</div>
+                  <div class="art-chip art-chip--b"><svg class="icon" aria-hidden="true"><use href="#i-printer"></use></svg> Impresión</div>
+                  <div class="slide-grid-overlay"></div>
+                </div>
+                <div class="slide-content">
+                  <span class="slide-badge">Zona Oficina</span>
+                  <p class="slide-title">Trabajá sin distracciones</p>
+                  <p>PCs con Office, monitor Full HD, webcam e impresión desde tu puesto. Ideal para estudio y trabajos prácticos.</p>
+                  <div class="slide-foot">
+                    <div class="slide-price">$ 1.200 <span>/ hora</span></div>
+                    <a class="btn btn-soft btn-sm" href="disponibilidad.html">Ver mapa
+                      <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="carousel-slide" data-theme="violet">
+                <div class="slide-art">
+                  <div class="art-orb"></div>
+                  <div class="art-chip art-chip--a"><svg class="icon" aria-hidden="true"><use href="#i-gamepad"></use></svg> PS5</div>
+                  <div class="art-chip art-chip--b"><svg class="icon" aria-hidden="true"><use href="#i-monitor"></use></svg> 4K HDR</div>
+                  <div class="art-chip art-chip--c"><svg class="icon" aria-hidden="true"><use href="#i-users"></use></svg> 2 mandos</div>
+                  <div class="slide-grid-overlay"></div>
+                </div>
+                <div class="slide-content">
+                  <span class="slide-badge">Zona Consolas</span>
+                  <p class="slide-title">La sala de tu clan</p>
+                  <p>PS5 y Xbox Series X en pantallas 4K, con sillones y dos mandos incluidos.</p>
+                  <div class="slide-foot">
+                    <div class="slide-price">$ 3.200 <span>/ hora</span></div>
+                    <a class="btn btn-soft btn-sm" href="disponibilidad.html">Reservar consola
+                      <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="carousel-slide" data-theme="pink">
+                <div class="slide-art">
+                  <div class="art-orb"></div>
+                  <div class="art-chip art-chip--a"><svg class="icon" aria-hidden="true"><use href="#i-trophy"></use></svg> $ 250.000</div>
+                  <div class="art-chip art-chip--b"><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg> 21 / 11</div>
+                  <div class="art-chip art-chip--c"><svg class="icon" aria-hidden="true"><use href="#i-users"></use></svg> 16 cupos</div>
+                  <div class="slide-grid-overlay"></div>
+                </div>
+                <div class="slide-content">
+                  <span class="slide-badge">Torneo</span>
+                  <p class="slide-title">Copa Cyber Nocturna</p>
+                  <p>Valorant 5v5, eliminación directa y $ 250.000 en premios. Inscribite desde la web.</p>
+                  <div class="slide-foot">
+                    <div class="slide-price">21/11 <span>· 18:00 hs</span></div>
+                    <a class="btn btn-soft btn-sm" href="#torneos">Ver torneo
+                      <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <div class="carousel-ui">
+                <div class="carousel-dots" aria-label="Seleccionar destacado"></div>
+                <div class="carousel-arrows">
+                  <button class="carousel-btn" type="button" data-carousel="prev" aria-label="Anterior">
+                    <svg class="icon" aria-hidden="true"><use href="#i-chevron-left"></use></svg>
+                  </button>
+                  <button class="carousel-btn" type="button" data-carousel="next" aria-label="Siguiente">
+                    <svg class="icon" aria-hidden="true"><use href="#i-chevron-right"></use></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-float">
+              <span class="pulse-ring"><svg class="icon" aria-hidden="true"><use href="#i-monitor"></use></svg></span>
+              <div>
+                <strong><span data-count="disponible">18</span> equipos libres</strong>
+                <span>Actualizado en tiempo real</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Estado rápido -->
+        <div class="avail-band reveal" style="margin-top:56px">
+          <div class="avail-stat"><span class="dot dot--green"></span><div><strong data-count="disponible">18</strong><span>Disponibles</span></div></div>
+          <div class="avail-stat"><span class="dot dot--amber"></span><div><strong data-count="reservado">4</strong><span>Reservados</span></div></div>
+          <div class="avail-stat"><span class="dot dot--red"></span><div><strong data-count="ocupado">4</strong><span>Ocupados</span></div></div>
+          <div class="avail-stat"><span class="dot dot--gray"></span><div><strong data-count="mantenimiento">2</strong><span>En mantenimiento</span></div></div>
+          <a href="disponibilidad.html" class="btn btn-primary">Ver mapa en vivo
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ PRECIOS ============================ -->
+    <section class="section" id="precios">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Tarifas claras</span>
+          <h2>Precios sin sorpresas</h2>
+          <p>Pagás por el tiempo que usás. Sin inscripción, sin cargos ocultos y con packs para sesiones largas.</p>
+          <div class="tabs" style="margin-top:22px" role="tablist" aria-label="Tipo de equipo">
+            <button type="button" class="tab is-active" data-price-tab="pc" role="tab" aria-selected="true">
+              <svg class="icon icon-sm" aria-hidden="true" style="display:inline;vertical-align:-2px"><use href="#i-monitor"></use></svg> Gaming
+            </button>
+            <button type="button" class="tab" data-price-tab="oficina" role="tab" aria-selected="false">
+              <svg class="icon icon-sm" aria-hidden="true" style="display:inline;vertical-align:-2px"><use href="#i-briefcase"></use></svg> Oficina
+            </button>
+            <button type="button" class="tab" data-price-tab="consola" role="tab" aria-selected="false">
+              <svg class="icon icon-sm" aria-hidden="true" style="display:inline;vertical-align:-2px"><use href="#i-gamepad"></use></svg> Consolas
+            </button>
+          </div>
+        </div>
+        <div class="price-grid" id="priceGrid"></div>
+        <div class="price-note">
+          <svg class="icon" aria-hidden="true"><use href="#i-info"></use></svg>
+          Tarifas de demostración. Los precios finales se configuran desde el panel de administración.
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ PROMOS ============================ -->
+    <section class="section section--tight" id="promos">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Beneficios activos</span>
+          <h2>Promos para jugar y trabajar</h2>
+          <p>Descuentos, combos y puntos extra que se actualizan desde el panel del cyber.</p>
+        </div>
+        <div class="promo-grid" id="promoGrid"></div>
+      </div>
+    </section>
+
+    <!-- ============================ TORNEOS ============================ -->
+    <section class="section" id="torneos">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Competencia</span>
+          <h2>Próximos torneos</h2>
+          <p>Inscribite desde la web, asegurá tu cupo y competí por premios en efectivo y horas de juego.</p>
+        </div>
+        <div class="tournament-grid" id="tournamentGrid"></div>
+      </div>
+    </section>
+
+    <!-- ============================ SERVICIOS ============================ -->
+    <section class="section section--tight" id="servicios">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Todo incluido</span>
+          <h2>Más que una hora de juego</h2>
+          <p>La cuenta es única para la web y la app: reservas, puntos, kiosco e impresiones en un solo lugar.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card card reveal">
+            <div class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-qr"></use></svg></div>
+            <h3>Acceso con QR</h3>
+            <p>Escaneá el código del equipo desde la app y tu sesión arranca al instante, sin tipear contraseñas.</p>
+            <a class="link-arrow" href="login.html">Conocer más <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+          </article>
+          <article class="feature-card card reveal reveal-delay-1">
+            <div class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-gift"></use></svg></div>
+            <h3>Puntos de fidelidad</h3>
+            <p>Sumá 10 puntos por cada 30 minutos y canjealos por horas gratis, snacks o impresiones.</p>
+            <a class="link-arrow" href="login.html">Ver mis puntos <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+          </article>
+          <article class="feature-card card reveal reveal-delay-2">
+            <div class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-cup"></use></svg></div>
+            <h3>Kiosco sin levantarte</h3>
+            <p>Pedí bebidas y snacks desde la app: el pedido aparece en el kiosco y te avisamos cuando está listo.</p>
+            <a class="link-arrow" href="#kiosco">Ver productos <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+          </article>
+          <article class="feature-card card reveal reveal-delay-3">
+            <div class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-printer"></use></svg></div>
+            <h3>Impresión desde tu PC</h3>
+            <p>Enviá tus documentos a la cola de impresión y retiralos en el kiosco cuando estén listos.</p>
+            <a class="link-arrow" href="login.html">Enviar a imprimir <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ KIOSCO ============================ -->
+    <section class="section" id="kiosco">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Kiosco</span>
+          <h2>Stock para tu partida</h2>
+          <p>Bebidas, snacks y servicios. Pedí desde la app y retirá en el mostrador sin salir de tu puesto.</p>
+        </div>
+        <div class="kiosco-grid" id="kioscoGrid"></div>
+      </div>
+    </section>
+
+    <!-- ============================ CTA ============================ -->
+    <section class="section--tight">
+      <div class="container">
+        <div class="cta-band reveal">
+          <div>
+            <span class="eyebrow">Tu lugar, tu horario</span>
+            <h2>¿Listo para la próxima partida?</h2>
+            <p>Mirá qué equipos están libres ahora y asegurá el tuyo en menos de un minuto.</p>
+          </div>
+          <div class="cta-actions">
+            <a class="btn btn-primary btn-lg" href="disponibilidad.html">Ver disponibilidad
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+            </a>
+            <a class="btn btn-ghost btn-lg" href="login.html">Crear cuenta</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ CONTACTO ============================ -->
+    <section class="section" id="contacto">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info card reveal">
+            <span class="eyebrow">Contacto</span>
+            <h2 style="margin-top:12px">Estamos abiertos<br>las 24 horas.</h2>
+            <p>Escribinos por consultas, reservas grupales o torneos. También podés acercarte al local: siempre hay alguien en el mostrador.</p>
+            <div class="contact-list">
+              <div class="contact-item">
+                <span class="ci-icon"><svg class="icon" aria-hidden="true"><use href="#i-map-pin"></use></svg></span>
+                <div><strong>Dirección</strong><span>Av. Gamer 1024, Buenos Aires</span></div>
+              </div>
+              <div class="contact-item">
+                <span class="ci-icon"><svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg></span>
+                <div><strong>Teléfono / WhatsApp</strong><span>+54 11 5555-2424</span></div>
+              </div>
+              <div class="contact-item">
+                <span class="ci-icon"><svg class="icon" aria-hidden="true"><use href="#i-mail"></use></svg></span>
+                <div><strong>Correo</strong><span>hola@cyber24h.com</span></div>
+              </div>
+              <div class="contact-item">
+                <span class="ci-icon"><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg></span>
+                <div><strong>Horario</strong><span>Abierto 24/7, los 365 días del año</span></div>
+              </div>
+            </div>
+            <div class="contact-map" aria-hidden="true">
+              <div class="pin"><svg class="icon"><use href="#i-map-pin"></use></svg></div>
+            </div>
+          </div>
+
+          <div class="contact-form card reveal reveal-delay-1">
+            <h3>Dejanos tu mensaje</h3>
+            <p>Respondemos dentro de las próximas 24 horas.</p>
+            <form id="contactForm" novalidate>
+              <div class="form-grid">
+                <div class="field">
+                  <label for="contactName">Nombre</label>
+                  <input type="text" id="contactName" name="nombre" placeholder="Tu nombre" required>
+                </div>
+                <div class="field">
+                  <label for="contactEmail">Correo</label>
+                  <input type="email" id="contactEmail" name="email" placeholder="tu@correo.com" required>
+                </div>
+                <div class="field field--full">
+                  <label for="contactTopic">Motivo</label>
+                  <select id="contactTopic" name="motivo">
+                    <option>Consulta general</option>
+                    <option>Reserva grupal</option>
+                    <option>Inscripción a torneo</option>
+                    <option>Evento privado</option>
+                    <option>Reclamo o sugerencia</option>
+                  </select>
+                </div>
+                <div class="field field--full">
+                  <label for="contactMessage">Mensaje</label>
+                  <textarea id="contactMessage" name="mensaje" placeholder="Contanos qué necesitás..." required></textarea>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">Enviar mensaje
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+              </button>
+              <p class="form-note">Al enviar aceptás nuestra <a href="#" data-toast="En el prototipo los términos y condiciones son de demostración." data-toast-type="info">política de privacidad</a>.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html">
+            <span class="brand-mark">24</span>
+            <span class="brand-text"><strong>CYBER</strong><span>24 HORAS</span></span>
+          </a>
+          <p>PCs gamer y de oficina, consolas, kiosco y torneos en un mismo lugar. Abierto las 24 horas, todos los días.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram" data-toast="Nuestro Instagram estará disponible próximamente." data-toast-type="info"><svg class="icon"><use href="#i-instagram"></use></svg></a>
+            <a href="#" aria-label="Twitch" data-toast="Nuestro canal de Twitch estará disponible próximamente." data-toast-type="info"><svg class="icon"><use href="#i-twitch"></use></svg></a>
+            <a href="#" aria-label="Facebook" data-toast="Nuestra página de Facebook estará disponible próximamente." data-toast-type="info"><svg class="icon"><use href="#i-facebook"></use></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Explorar</h4>
+          <ul>
+            <li><a href="index.html#precios">Precios</a></li>
+            <li><a href="index.html#promos">Promociones</a></li>
+            <li><a href="index.html#torneos">Torneos</a></li>
+            <li><a href="index.html#kiosco">Kiosco</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Cuenta</h4>
+          <ul>
+            <li><a href="login.html">Iniciar sesión</a></li>
+            <li><a href="login.html#registro">Crear cuenta</a></li>
+            <li><a href="cuenta.html">Mis reservas</a></li>
+            <li><a href="disponibilidad.html">Mapa en vivo</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul class="footer-contact">
+            <li><svg class="icon"><use href="#i-map-pin"></use></svg><span>Av. Gamer 1024, Buenos Aires</span></li>
+            <li><svg class="icon"><use href="#i-phone"></use></svg><span>+54 11 5555-2424</span></li>
+            <li><svg class="icon"><use href="#i-mail"></use></svg><span>hola@cyber24h.com</span></li>
+            <li><svg class="icon"><use href="#i-clock"></use></svg><span>Abierto 24/7</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Cyber 24 Horas. Todos los derechos reservados.</span>
+        <div class="footer-links">
+          <span class="demo-note">Prototipo UI · datos de ejemplo</span>
+          <a href="empleado.html">Acceso personal</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/icons.js?v=oficina17"></script>
+  <script src="assets/js/data.js?v=oficina17"></script>
+  <script src="assets/js/app.js?v=oficina17"></script>
+</body>
+</html>
