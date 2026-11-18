@@ -1,7 +1,7 @@
 # Cyber 24 Horas — Sitio web
 
 
-https://valentinozelara.github.io/cyber24-horas/
+https://valentinozelara.github.io/cyber/
 
 ## Páginas
 
